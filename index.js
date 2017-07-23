@@ -4,7 +4,7 @@ var Bot = require('node-telegram-bot-api');
 var bot = new Bot(token, { polling: true });
 
 
-console.log('Bot server started in the ' + process.env.NODE_ENV + ' mode');
+console.log('Bot server started ...');
 
 
 var default_message = `\t************************************
