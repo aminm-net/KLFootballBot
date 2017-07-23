@@ -1,9 +1,18 @@
 
+var token = '423962643:AAHLDwzZp_VwObI2cklYgaiVXNZUB8X2vlM';
+var Bot = require('node-telegram-bot-api');
+var bot;
 
-var TelegramBot = require('node-telegram-bot-api'),
+if(process.env.NODE_ENV === 'production') {
+  bot = new Bot(token);
+  bot.setWebHook(process.env.HEROKU_URL + bot.token);
+}
+else {
+  bot = new Bot(token, { polling: true });
+}
 
-// Be sure to replace YOUR_BOT_TOKEN with your actual bot token on this line.
-bot = new TelegramBot("423962643:AAHEAh4XROmp3kNOXKorxSp95MFGq8VqMQo", { polling: true });
+console.log('Bot server started in the ' + process.env.NODE_ENV + ' mode');
+
 
 var default_message = `\t************************************
 					On: {{Day}}
@@ -16,6 +25,7 @@ var session_message = default_message;
 var isSessionOpen = false;
 var attendants = [];
 var admins = ["amingram", "Echabok", "alirezamgt"];
+
 
 	var isAdmin = function (username) {
 		if (admins.indexOf(username) >= 0)
@@ -105,26 +115,31 @@ var admins = ["amingram", "Echabok", "alirezamgt"];
 
 	var outFunc = function (msg) {
 		
-		var player = msg.from.first_name + "-" + msg.from.last_name;
-		var index = attendants.indexOf(player);
-
-		if (index >= 0) {
-			attendants.splice(index, 1);
-			var list = session_message;
-
-			for (i = 0; i < attendants.length; i++) {
-				list += i + 1 + " - " + attendants[i] + "\n";
-			};
-
-			list += "\n=> To attend: /in";
-			list += "\n=> To cancel: /out";
+		if (!isSessionOpen){
+			bot.sendMessage(msg.chat.id, "آقا لیست آلردی بسته شده، راه نداره الان کنسل کنی، اگه خیلی مورد اورژانسیه با علیرضا یا احسان تماس بگیر؛ کاری از دست من ساخته نیست" + "\nThe session has been alrady closed and you cannot cancel, contact alireza in emergency cases!");
 			
-			bot.sendMessage(msg.chat.id, "ای بابا :-|")
+		}else{
 			
-			bot.sendMessage(msg.chat.id, list)
-		} else
-			bot.sendMessage(msg.chat.id, "اخوی! شما قبلا هم تو لیست نبودی نیاز به این کارا هم نیست" + "\n You have never been in the list anyhow!");
-		
+			var player = msg.from.first_name + "-" + msg.from.last_name;
+			var index = attendants.indexOf(player);
+
+			if (index >= 0) {
+				attendants.splice(index, 1);
+				var list = session_message;
+
+				for (i = 0; i < attendants.length; i++) {
+					list += i + 1 + " - " + attendants[i] + "\n";
+				};
+
+				list += "\n=> To attend: /in";
+				list += "\n=> To cancel: /out";
+				
+				bot.sendMessage(msg.chat.id, "ای بابا :-|")
+				
+				bot.sendMessage(msg.chat.id, list)
+			} else
+				bot.sendMessage(msg.chat.id, "اخوی! شما قبلا هم تو لیست نبودی نیاز به این کارا هم نیست" + "\n You have never been in the list anyhow!");
+		}
 	};
 
 	var setMondayFunc = function (msg) {
