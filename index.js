@@ -261,50 +261,50 @@ var admins = ["amingram", "Echabok", "alirezamgt"];
 		listFunc(msg);
 	});
 
-	bot.onText(/^\/open@VirtualAlirezaBot$/, (msg, match) => {
+	bot.onText(/^\/open@KLFootballBot$/, (msg, match) => {
 		openFunc(msg);
 	});
 
-	bot.onText(/^\/in@VirtualAlirezaBot$/, (msg, match) => {
+	bot.onText(/^\/in@KLFootballBot$/, (msg, match) => {
 		inFunc(msg)
 	});
 
-	bot.onText(/^\/close@VirtualAlirezaBot$/, (msg, match) => {
+	bot.onText(/^\/close@KLFootballBot$/, (msg, match) => {
 		closeFunc(msg);
 	});
 
-	bot.onText(/^\/reopen@VirtualAlirezaBot$/, (msg, match) => {
+	bot.onText(/^\/reopen@KLFootballBot$/, (msg, match) => {
 		reopenFunc(msg);
 	});
 
-	bot.onText(/^\/out@VirtualAlirezaBot$/, (msg, match) => {
+	bot.onText(/^\/out@KLFootballBot$/, (msg, match) => {
 		outFunc(msg);
 	});
 
-	bot.onText(/^\/reset@VirtualAlirezaBot$/, (msg, match) => {
+	bot.onText(/^\/reset@KLFootballBot$/, (msg, match) => {
 		resetFunc(msg);
 	});
 
-	bot.onText(/^\/monday@VirtualAlirezaBot$/, (msg, match) => {
+	bot.onText(/^\/monday@KLFootballBot$/, (msg, match) => {
 		setMondayFunc(msg);
 	});
 
-	bot.onText(/^\/tuesday@VirtualAlirezaBot$/, (msg, match) => {
+	bot.onText(/^\/tuesday@KLFootballBot$/, (msg, match) => {
 		setTuesdayFunc(msg);
 	});
 
-	bot.onText(/^\/wednesday@VirtualAlirezaBot$/, (msg, match) => {
+	bot.onText(/^\/wednesday@KLFootballBot$/, (msg, match) => {
 		setWedenesdayFunc(msg);
 	});
 
-	bot.onText(/^\/thursday@VirtualAlirezaBot$/, (msg, match) => {
+	bot.onText(/^\/thursday@KLFootballBot$/, (msg, match) => {
 		setThursdayFunc(msg);
 	});
 
-	bot.onText(/^\/friday@VirtualAlirezaBot$/, (msg, match) => {
+	bot.onText(/^\/friday@KLFootballBot$/, (msg, match) => {
 		setFridayFunc(msg);
 	});
 
-	bot.onText(/^\/list@VirtualAlirezaBot$/, (msg, match) => {
+	bot.onText(/^\/list@KLFootballBot$/, (msg, match) => {
 		listFunc(msg);
 	});
