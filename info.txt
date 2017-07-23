@@ -18,6 +18,8 @@ curl -F "url=https://footballbot2-ipswcrmssm.now.sh"  https://api.telegram.org/b
 /friday- Set day on Friday
 /in - I am in!
 /out - I am out!
+/inv- Add Vala!
+/outv- Remove Vala!
 /close - close the session
 /reopen - Open a closed session again
 /list - List all the players
