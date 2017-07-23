@@ -1,0 +1,23 @@
+
+
+
+curl -F "url=https://footballbot-pyixadmlpf.now.sh"  https://api.telegram.org/bot332327571:AAGWXFMypYsquN0-catn4QhBaBTF1ocvvcU/setWebhook
+
+
+
+
+
+
+/open - Start a new session
+/reset - Reset day of week
+/tuesday- Set day on Tuesday
+/monday- Set day on Monday
+/tuesday- Set day on Tuesday
+/wednesday- Set day on Wednesday
+/thursday- Set day on Thursday
+/friday- Set day on Friday
+/in - I am in!
+/out - I am out!
+/close - close the session
+/reopen - Open a closed session again
+/list - List all the players

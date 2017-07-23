@@ -1,0 +1,18 @@
+{
+  "name": "footballbot2",
+  "version": "1.2.1",
+  "description": "A bot to manage football matches in telegram",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "author": "Amin",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.16.2",
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "node-telegram-bot-api": "^0.27.1"
+  }
+}
