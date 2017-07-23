@@ -1,8 +1,9 @@
 
-var token = '423962643:AAHj-BQRCbyVmABnYFMq4e6GgCvLwhHsUj8';
+var token = '423962643:AAEvAGrd4Heh1_7g6eleMoGEZB5B3NBUMNM';
 var Bot = require('node-telegram-bot-api');
 var bot = new Bot(token, { polling: true });
 
+module.exports = () => 'Ahoy, world!';
 
 console.log('Bot server started ...');
 
