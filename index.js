@@ -1,15 +1,8 @@
 
 var token = '423962643:AAHLDwzZp_VwObI2cklYgaiVXNZUB8X2vlM';
 var Bot = require('node-telegram-bot-api');
-var bot;
+var bot = new Bot(token, { polling: true });
 
-if(process.env.NODE_ENV === 'production') {
-  bot = new Bot(token);
-  bot.setWebHook(process.env.HEROKU_URL + bot.token);
-}
-else {
-  bot = new Bot(token, { polling: true });
-}
 
 console.log('Bot server started in the ' + process.env.NODE_ENV + ' mode');
 
