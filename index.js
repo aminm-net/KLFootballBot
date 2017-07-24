@@ -1,25 +1,22 @@
-
-var token = '423962643:AAEkDK3ucXyZbP7hBBu3n67zh4ElF1LqXCI';
+var token = '423962643:AAGl9yuL2oBGKY5GocQXpVQhpRWckc2FCdg';
+//var Player = require('./player.js');
 var Bot = require('node-telegram-bot-api');
 var bot = new Bot(token, {
 		polling: true
 	});
-
-var cron = require('cron');
-var cronJob = cron.job('0 */15 * * * *', function(){
-    console.info('.');
-}); 
-cronJob.start();
 	
-module.exports = () => 'Ahoy, world!';
+
+
+module.exports = () => 'I am alive!';
 
 console.log('Bot server started ...');
 
-var default_message = `\t************************************
-					On: {{Day}}
-					Time: 7-9
-					Venue: TBA (Default: Ampang Sport Planet)
-				 ************************************\n`;
+var default_message = 
+`\t*****************************************
+\t\t\t\tOn:\t{{Day}}
+\t\t\t\tTime:\t7-9
+\t\t\t\tVenue:\tTBA (Ampang Sport Planet)
+*****************************************\n`;
 
 var session_message = default_message;
 var isSessionOpen = false;

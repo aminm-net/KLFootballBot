@@ -1,5 +1,0 @@
-423962643:AAHj-BQRCbyVmABnYFMq4e6GgCvLwhHsUj8
-
-
-
-curl -F "url=https://footballbot2-rnxvwncfiy.now.sh"  https://api.telegram.org/bot423962643:AAHj-BQRCbyVmABnYFMq4e6GgCvLwhHsUj8/setWebhook
