@@ -1,7 +1,7 @@
-423962643:AAFXclxGx8eHkAk-ratD5UxBmQKMsgiw6KU
+423962643:AAEkDK3ucXyZbP7hBBu3n67zh4ElF1LqXCI
 https://footballbot2-vrlyhykmli.now.sh
 
-curl -F "url=https://footballbot2-vrlyhykmli.now.sh"  https://api.telegram.org/bot423962643:AAFXclxGx8eHkAk-ratD5UxBmQKMsgiw6KU/setWebhook
+curl -F "url=https://footballbot2-vrlyhykmli.now.sh"  https://api.telegram.org/bot423962643:AAEkDK3ucXyZbP7hBBu3n67zh4ElF1LqXCI/setWebhook
 
 
 
