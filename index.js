@@ -6,9 +6,8 @@ var bot = new Bot(token, {
 	});
 
 var cron = require('cron');
-var cronJob = cron.job('*/30 * * * * *', function(){
-    // perform operation e.g. GET request http.get() etc.
-    console.info('bit...');
+var cronJob = cron.job('0 */15 * * * *', function(){
+    console.info('.');
 }); 
 cronJob.start();
 	
