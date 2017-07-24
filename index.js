@@ -1,10 +1,17 @@
 
-var token = '423962643:AAF-aEJmq_B4EX8P2lJKkMxwsfrYlm9j-2Q';
+var token = '423962643:AAFXclxGx8eHkAk-ratD5UxBmQKMsgiw6KU';
 var Bot = require('node-telegram-bot-api');
 var bot = new Bot(token, {
 		polling: true
 	});
 
+var cron = require('cron');
+var cronJob = cron.job('*/30 * * * * *', function(){
+    // perform operation e.g. GET request http.get() etc.
+    console.info('bit...');
+}); 
+cronJob.start();
+	
 module.exports = () => 'Ahoy, world!';
 
 console.log('Bot server started ...');
@@ -16,7 +23,6 @@ var default_message = `\t************************************
 				 ************************************\n`;
 
 var session_message = default_message;
-
 var isSessionOpen = false;
 var attendants = [];
 var admins = ["amingram", "Echabok", "alirezamgt"];

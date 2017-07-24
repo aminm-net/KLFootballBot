@@ -1,7 +1,7 @@
-423962643:AAF-aEJmq_B4EX8P2lJKkMxwsfrYlm9j-2Q
+423962643:AAFXclxGx8eHkAk-ratD5UxBmQKMsgiw6KU
+https://footballbot2-vrlyhykmli.now.sh
 
-
-curl -F "url=https://footballbot2-oajfmonudw.now.sh"  https://api.telegram.org/bot423962643:AAF-aEJmq_B4EX8P2lJKkMxwsfrYlm9j-2Q/setWebhook
+curl -F "url=https://footballbot2-vrlyhykmli.now.sh"  https://api.telegram.org/bot423962643:AAFXclxGx8eHkAk-ratD5UxBmQKMsgiw6KU/setWebhook
 
 
 
@@ -23,3 +23,21 @@ curl -F "url=https://footballbot2-oajfmonudw.now.sh"  https://api.telegram.org/b
 /close - close the session
 /reopen - Open a closed session again
 /list - List all the players
+
+
+مسیج بالا لیست تمام دستورات ربات هست جرفرنس
+برای استاپ شدن ربات همه یه راهی پیدا کردم
+هر وقت دیدید که استاپ شده کافیه دو سه بار لینک زیر رو رفرش کنید:
+
+https://footballbot2-oajfmonudw.now.sh
+
+وقتی مسیج
+
+Ahoy, world!
+
+رو دیدید ربات دوباره استارت شده و ریسپانسیو
+
+
+دوتا دستور جدید داریم برای اضافه و حذف والا:
+/inv
+/outv

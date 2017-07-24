@@ -1,5 +1,5 @@
 {
-  "name": "footballbot2",
+  "name": "XXXfootballbot2",
   "version": "1.2.1",
   "description": "A bot to manage football matches in telegram",
   "main": "index.js",
@@ -14,6 +14,7 @@
     "body-parser": "^1.17.2",
     "express": "^4.15.3",
     "node-telegram-bot-api": "^0.27.1",
-	"micro": "latest"
+	"micro": "latest",
+	"cron": "latest"
   }
 }
