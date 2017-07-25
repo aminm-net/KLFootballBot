@@ -1,11 +1,11 @@
-var token = '423962643:AAGl9yuL2oBGKY5GocQXpVQhpRWckc2FCdg';
-//var Player = require('./player.js');
+
+var token = '423962643:AAHe1smec8EMVo8b2dspWrLv4rxe0XMKkgM';
+
+var Player = require('./player.js');
 var Bot = require('node-telegram-bot-api');
 var bot = new Bot(token, {
 		polling: true
 	});
-	
-
 
 module.exports = () => 'I am alive!';
 
@@ -23,6 +23,18 @@ var isSessionOpen = false;
 var attendants = [];
 var admins = ["amingram", "Echabok", "alirezamgt"];
 
+// remember after recovered from crash
+Player.find({}, function(err, players) {
+ if (err)
+	 console.log(err.message);
+ 
+	for(var i=0;i< players.length; i++)
+		attendants.push(players[i].name);
+	
+	if(attendants.length>0)	
+		isSessionOpen = true;
+});
+
 var isAdmin = function (username) {
 	if (admins.indexOf(username) >= 0)
 		return true;
@@ -34,7 +46,15 @@ var openFunc = function (msg) {
 	if (isAdmin(msg.from.username)) {
 		if (!isSessionOpen) {
 			session_message = default_message;
+			
 			attendants = [];
+			
+			// clear db
+			Player.remove({},function(err, players) {
+			 if (err)
+				 console.log(err.message);
+			});
+
 			bot.sendMessage(msg.chat.id, session_message + "\n=> To attend: /in" + "\n=> To cancel: /out");
 			isSessionOpen = true;
 		} else {
@@ -53,6 +73,13 @@ var inFunc = function (msg) {
 
 		if (attendants.indexOf(player) === -1) {
 			attendants.push(player);
+			
+			// add to db
+			var newPlayer = new Player({ name: player });
+			newPlayer.save(function (err) {
+			 if (err)
+				 console.log(err.message);
+			});
 
 			var list = session_message;
 
@@ -80,6 +107,13 @@ var inValaFunc = function (msg) {
 
 			if (attendants.indexOf(player) === -1) {
 				attendants.push(player);
+				
+				// add to db
+				var newPlayer = new Player({ name: player });
+				newPlayer.save(function (err) {
+				 if (err)
+					 console.log(err.message);
+				});
 
 				var list = session_message;
 
@@ -110,6 +144,13 @@ var outFunc = function (msg) {
 
 		if (index >= 0) {
 			attendants.splice(index, 1);
+			
+			// remove from db
+			Player.findOneAndRemove({name: player}, function(err){
+				if (err)
+					console.log(err.message);
+			});
+			
 			var list = session_message;
 
 			for (i = 0; i < attendants.length; i++) {
@@ -135,6 +176,13 @@ var outValaFunc = function (msg) {
 
 		if (index >= 0) {
 			attendants.splice(index, 1);
+			
+			// remove from db
+			Player.findOneAndRemove({name: player}, function(err){
+				if (err)
+					console.log(err.message);
+			});
+			
 			var list = session_message;
 
 			for (i = 0; i < attendants.length; i++) {
